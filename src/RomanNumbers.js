@@ -15,24 +15,19 @@ const ROMAN_SYMBOLS = {
 }
 
 class RomanNumbers {
-  convertToRomanNumberSegu(arabicNumber)
-  {
-    const maximumSingleLetterNumber = 3
-    const palito = "I"
-    if(arabicNumber <= maximumSingleLetterNumber) {
-      let romanNumber = ""
-      for(var i = 1; i <= arabicNumber; i++){
-        romanNumber += palito
-      }
-      return romanNumber
-    }
-  }
-
   convertToRomanNumber(arabicNumber){
     const keysRomanSymbols =  Object.keys(ROMAN_SYMBOLS).reverse()
+    
+    return this.operate(keysRomanSymbols, arabicNumber)
+  }
+  
+  // Private
+  
+  operate(keysRomanSymbols, arabicNumber) {
     let romanNumberString = ''
+
     keysRomanSymbols.forEach(element => {
-      while (arabicNumber >= Number(element)){
+      while (this.thereIsNumberToSubstract(arabicNumber, element)) {
         arabicNumber -= Number(element)
         romanNumberString += (ROMAN_SYMBOLS[element])
       }
@@ -40,5 +35,7 @@ class RomanNumbers {
     return romanNumberString
   }
 
-
+  thereIsNumberToSubstract(arabicNumber, element) {
+    return arabicNumber >= Number(element)
+  }
 }
