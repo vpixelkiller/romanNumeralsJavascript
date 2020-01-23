@@ -40,7 +40,7 @@ describe('Roman numbers',function (){
     expect(expectedResult).toEqual(romanNumber)
   })
 
-  it('returns the roman numeral for each number from 1 to 9.999', ()=>{
+  it('returns the roman numeral for each number from 1 to 999', ()=>{
     const newRomanNumbers = new RomanNumbers()
     const expectedResult = 'string'
 
@@ -52,4 +52,5 @@ describe('Roman numbers',function (){
     }
   })
 })
+
 

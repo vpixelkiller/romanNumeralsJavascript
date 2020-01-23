@@ -38,4 +38,8 @@ class RomanNumbers {
   thereIsNumberToSubstract(arabicNumber, element) {
     return arabicNumber >= Number(element)
   }
+
+  convertToNumber(string) {
+
+  }
 }
